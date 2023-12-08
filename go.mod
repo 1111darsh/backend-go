@@ -1,4 +1,4 @@
-module github.com/111darsh/task-api
+module task-api
 
 go 1.18
 
