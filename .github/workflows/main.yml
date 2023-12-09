@@ -4,7 +4,8 @@ on:
   push:
     branches:
       - main # Change this to your desired branch
-
+env:
+  APP: backend-go
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
@@ -23,6 +24,6 @@ jobs:
         run: |
           TAG=` echo ${{github.sha}} | cut -c1-6`
           echo "$TAG"
-          docker build -t 1111darsh/backend-go:$TAG -t 1111darsh/backend-go:latest .
-          docker push 1111darsh/backend-go:$TAG
-          docker push 1111darsh/backend-go:latest
+          docker build -t ${{secrets.DOCKER_HUB_USERNAME}}/${{env.APP}}:$TAG -t ${{ secrets.DOCKER_HUB_USERNAME}}/${{env.APP}}:latest .
+          docker push ${{secrets.DOCKER_HUB_USERNAME}}/${{env.APP}}:$TAG
+          docker push ${{secrets.DOCKER_HUB_USERNAME}}/${{env.APP}}:latest
