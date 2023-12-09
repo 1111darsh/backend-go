@@ -10,4 +10,3 @@ COPY --from=builder /app/task-api .
 RUN chmod +x task-api
 CMD ["./task-api"]
 EXPOSE 5002
-~              
