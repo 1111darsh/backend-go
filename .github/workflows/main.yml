@@ -21,6 +21,6 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          echo "Commit ID: $COMMIT_ID"
-          docker build -t 1111darsh/backend-go:$COMMIT_ID .
-          docker push 1111darsh/backend-go:$COMMIT_ID
+          echo "Commit ID: ${{github.sha}}
+          docker build -t 1111darsh/backend-go:latest .
+          docker push 1111darsh/backend-go:latest
