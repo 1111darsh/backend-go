@@ -7,5 +7,6 @@ RUN go build -o task-api
 FROM alpine:latest
 WORKDIR /app
 COPY --from=builder /app/task-api .
-EXPOSE 8080
-CMD ["./task-api"]
+RUN chmod 777 task-api
+CMD ["task-api"]
+EXPOSE 5002
