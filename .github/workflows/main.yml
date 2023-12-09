@@ -25,3 +25,4 @@ jobs:
           echo "$TAG"
           docker build -t 1111darsh/backend-go:$TAG .
           docker push 1111darsh/backend-go:$TAG
+          docker push 1111darsh/backend-go:latest
