@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -109,5 +110,6 @@ func main() {
 
 	port := os.Getenv("PORT")
 	addr := ":" + port
+	fmt.Print("Application starting on ", port)
 	log.Fatal(http.ListenAndServe(addr, router))
 }
