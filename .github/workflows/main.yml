@@ -21,7 +21,7 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          TAG=` ${{github.sha}} | cut -c1-6`
+          TAG=` echo ${{github.sha}} | cut -c1-6`
           echo "$TAG"
           docker build -t 1111darsh/backend-go:latest .
           docker push 1111darsh/backend-go:latest
